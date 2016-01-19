@@ -1,0 +1,22 @@
+{
+  "name": "js2015",
+  "authors": [
+    "Rick Herrmann <rwherrmann@gmail.com>"
+  ],
+  "description": "",
+  "main": "app.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jasmine-core": "jasmine#~2.4.1"
+  }
+}

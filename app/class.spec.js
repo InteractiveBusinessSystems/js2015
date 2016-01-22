@@ -13,9 +13,11 @@ describe('class specs', () => {
 		person.first = 'adam';
 		expect(person.first).toBe('adam');
 	});
-	xit('developer', () => {
-		let dev = new Developer();
+	it('can inherit/extend', () => {
+		let dev = new Developer('homer');
+		dev.language = 'javascript';
 		expect(dev.first).toBe('homer');
+		expect(dev.language).toBe('javascript');
 	});
 
 });
@@ -45,5 +47,13 @@ class Person {
 }
 
 class Developer extends Person {
+
+	get language() {
+		return this._language;
+	}
+
+	set language(value) {
+		this._language = value;
+	}
 
 }

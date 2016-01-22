@@ -17,7 +17,7 @@ describe('set specs', () => {
 		expect(set.has(1)).toBe(true);
 	});
 
-	it('willprevent duplicates from being added', () => {
+	it('will prevent duplicates from being added', () => {
 		var set = new Set([1,2,3]);
 		set.add(1);
 		expect(set.size).toBe(3);

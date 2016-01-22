@@ -1,5 +1,5 @@
 'use strict';
-describe('scoping specs',  () => {
+describe('variable specs',  () => {
     it('let should give block scope', () => {
         let i = 5;
         if (true) {
@@ -11,28 +11,30 @@ describe('scoping specs',  () => {
 
     it('can create a const', () => {
         const x = 10;
-        //x = 12;
+        //x = 12;  //this is not allwoed
+
     });
 
     it('should allow default parameters', () => {
+        function f1 (name = 'rick'){
+            return name;
+        }
         let n = f1();
         expect(n).toBe('rick');
-        function f1 (name = 'rick'){
-            return name
-        }
+        
     });
 
     it('should allow destructing', () => {
-        let [a, b, c] = [1,2,3];
+        let [a, b, c] = [1,2,{person:'rick'}];
         expect(a).toBe(1);
         expect(b).toBe(2);
-        expect(c).toBe(3);
+        expect(c.person).toBe('rick');
     });
 
     it('should handle rest parameters', () => {
-        expect(f1(1,2,3)).toBe(6);
+        expect(f1('test', 1,2,3)).toBe(6);
 
-        function f1(...numbers) {
+        function f1(name, ...numbers) {
             let sum = 0;
             numbers.forEach(function(n) {
                 sum += n;
@@ -42,9 +44,9 @@ describe('scoping specs',  () => {
     });
 
     it('spread operator', () => {
-        expect(f1(...[1,2,3])).toBe(6);
+        expect(f1('test', ...[1,2,3])).toBe(6);
 
-        function f1(x, y, z) {
+        function f1(name, x, y, z) {
             return x + y + z;
         }
     });

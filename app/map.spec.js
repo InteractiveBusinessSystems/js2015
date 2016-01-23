@@ -1,0 +1,63 @@
+'use strict';
+describe('map specs', () => {
+	it('should be empty when constructed', () => {
+		let map = new Map();
+		expect(map.size).toBe(0);
+	})
+
+	it('should contain an added item', () => {
+		let map = new Map();
+		map.set('rick', 48);
+		expect(map.size).toBe(1);
+	});
+
+	it('should find an item in the map', () => {
+		let map = new Map();
+		map.set('rick', 48);
+		expect(map.get('rick')).toBe(48);
+	});
+
+	it('should have an object as the key', () => {
+		let map = new Map();
+		let team = {team: 'Michigan'}
+		map.set(team, 'wolverines');
+		expect(map.get(team)).toBe('wolverines');
+	});
+
+	it('should be constructed from array', () => {
+		let map = new Map([['team', 'Michigan'], ['name', 'Wolverines']]);
+		expect(map.get('team')).toBe('Michigan');
+	});
+
+	it('should not allow duplicates', () => {
+		let map = new Map();
+		map.set('weather', 'snow');
+		map.set('weather', 'rain');
+		expect(map.get('weather')).toBe('rain');
+	});
+
+	it('should clear the map', () => {
+		let map = new Map();
+		map.set('rick', 48);
+		map.clear();
+		expect(map.size).toBe(0);
+	});
+
+	it('delete should remove an item', () => {
+		let map = new Map([['team', 'Michigan'], ['name', 'Wolverines']]);
+		map.delete('team');
+		expect(map.has('team')).toBe(false);
+	});
+
+
+	//foreach
+
+	it('should work with for-of', () => {
+		let map = new Map([['team', 'Michigan']]);
+		for(let [x, y] of map) {
+			expect(x).toBe('team');
+			expect(y).toBe('Michigan');
+		}
+	});
+	//for of with array iterator destructured
+});

@@ -2,6 +2,7 @@
 
 let person;
 describe('class specs', () => {
+	
 	beforeEach(() => {
 		person = new Person('rick', 'herrmann');
 	});

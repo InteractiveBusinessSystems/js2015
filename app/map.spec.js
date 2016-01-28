@@ -7,19 +7,19 @@ describe('map specs', () => {
 
 	it('should contain an added item', () => {
 		let map = new Map();
-		map.set('rick', 48);
+		map.set('michigan', 'big ten');
 		expect(map.size).toBe(1);
 	});
 
 	it('should find an item in the map', () => {
 		let map = new Map();
-		map.set('rick', 48);
-		expect(map.get('rick')).toBe(48);
+		map.set('michigan', 'big ten');
+		expect(map.get('michigan')).toBe('big ten');
 	});
 
 	it('should have an object as the key', () => {
 		let map = new Map();
-		let team = {team: 'Michigan'}
+		let team = {name: 'Michigan'}
 		map.set(team, 'wolverines');
 		expect(map.get(team)).toBe('wolverines');
 	});
@@ -38,7 +38,7 @@ describe('map specs', () => {
 
 	it('should clear the map', () => {
 		let map = new Map();
-		map.set('rick', 48);
+		map.set('michigan', 10);
 		map.clear();
 		expect(map.size).toBe(0);
 	});
@@ -51,6 +51,12 @@ describe('map specs', () => {
 
 
 	//foreach
+	it('should be iterated with forEach', () => {
+		let map = new Map([['team', 'Michigan'], ['name', 'Wolverines']]);
+		let count = 0;
+		map.forEach((value, key) => count++);
+		expect(count).toBe(2);
+	});
 
 	it('should work with for-of', () => {
 		let map = new Map([['team', 'Michigan']]);
@@ -59,5 +65,11 @@ describe('map specs', () => {
 			expect(y).toBe('Michigan');
 		}
 	});
-	//for of with array iterator destructured
+
+	it('can add map items with no value', () => {
+		let map = new Map();
+		map.set('1');
+		expect(map.has('1')).toBe(true);
+		expect(map.get('1')).not.toBeDefined;
+	});
 });

@@ -34,6 +34,11 @@ describe('set specs', () => {
 		expect(set.size).toBe(3);
 	})
 
+	it('will prevent duplicates when created from array', () => {
+		var set = new Set([1, 1, 2, 2, 3, 3]);
+		expect(set.size).toBe(3);
+	})
+
 	it('clear should empty a set', () => {
 		let set = new Set([1,2,3]);
 		set.clear();

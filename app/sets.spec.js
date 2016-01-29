@@ -1,6 +1,8 @@
 'use strict';
 
 describe('set specs', () => {
+	//unique set of items
+	//value of object
 	it('can create an empty set', () => {
 		let set = new Set();
 		expect(set.size).toBe(0);
@@ -23,6 +25,7 @@ describe('set specs', () => {
 	});
 
 	it('can be created from an array', () => {
+		//like coming from a $http call...
 		var set = new Set([1,2,3]);
 		expect(set.has(1)).toBe(true);
 	});

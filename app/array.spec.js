@@ -34,4 +34,13 @@ describe('array specs', () => {
 		var actualArray = Array.from(arrayLike);
 		expect(actualArray.forEach).toBeDefined();
 	});
+
+	it('should create an array from a jquery object', () => {
+		let arrayLike = $('div');
+		//only has length and index
+		expect(arrayLike.forEach).not.toBeDefined();
+
+		var actualArray = Array.from(arrayLike);
+		expect(actualArray.forEach).toBeDefined();
+	});
 });

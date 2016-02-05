@@ -1,0 +1,27 @@
+{
+  "name": "js2015",
+  "version": "1.0.0",
+  "description": "```npm install``` to setup",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bower": "^1.7.2",
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwherrmann/js2015.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rwherrmann/js2015/issues"
+  },
+  "homepage": "https://github.com/rwherrmann/js2015#readme"
+}

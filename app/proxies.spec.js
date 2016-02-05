@@ -1,4 +1,5 @@
 describe('Proxies', () => {
+    //uses: validation, using a third party library, testing
     it('should intercept gets', () => {
         let car = {
             year: 2012,
@@ -68,4 +69,6 @@ describe('Proxies', () => {
         let kid = { name: 'bart', age: 10};
         expect(car.drive(kid)).toBe('bart is too young to drive');
     });
+
+    //other calls can be intercepted
 });

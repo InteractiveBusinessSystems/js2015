@@ -1,8 +1,9 @@
 'use strict'
 describe('object specs', () =>  {
-    describe('object is', function() {
+    describe('object is', () => {
         it('should consider Nan to Nan', () => {
             //can use anywhere you use ===
+            //not an operator, it is a function
             expect(NaN === NaN).toBe(false);
             expect(Object.is(NaN, NaN)).toBe(true);
         });
@@ -10,7 +11,7 @@ describe('object specs', () =>  {
 
     describe('object assign', () => {
         it('assign function', () => {
-            //replaces_.extend
+            //replaces _.extend
             let shark = {
                 bite: (target) => {
                     target.hurt = true;
@@ -46,9 +47,12 @@ describe('object specs', () =>  {
         });
     });
 
-    describe('method initiailizer shorthand', function() {
+    describe('method initiailizer shorthand', () => {
         it('should create a method with shorthand notation', () => {
             let server = {
+                // getPort : function () {
+                //     return 3000;
+                // }
                 getPort() {
                     return 3000;
                 }
@@ -58,8 +62,8 @@ describe('object specs', () =>  {
         });
     });
 
-    describe('computed property names', function() {
-        it('should allow properties from an expression', function() {
+    describe('computed property names', () => {
+        it('should allow properties from an expression', () => {
             let createObject = (name, value) => {
                 return {
                     [name]: value

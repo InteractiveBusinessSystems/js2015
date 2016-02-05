@@ -57,4 +57,22 @@ describe('object specs', () =>  {
             expect(server.getPort()).toBe(3000);
         });
     });
+
+    describe('computed property names', function() {
+        it('should allow properties from an expression', function() {
+            let createObject = (name, value) => {
+                return {
+                    [name]: value
+                };
+            }
+            var obj = createObject('season', 'winter');
+
+            expect(obj.season).toBe('winter');
+        });
+
+        it('should allow concatenated property names', () => {
+
+        });
+
+    });
 });

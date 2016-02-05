@@ -43,4 +43,17 @@ describe('array specs', () => {
 		var actualArray = Array.from(arrayLike);
 		expect(actualArray.forEach).toBeDefined();
 	});
+
+	it('from can be used as map', () => {
+	    let people = [
+			{name:'Homer', age:39},
+			{name:'Marge', age:34},
+			{name:'Bart', age:10},
+			{name:'Lisa', age:8},
+			{name:'Maggie', age:2}
+		];
+		let names = Array.from(people, (x) => x.name);
+		expect(names[0]).toBe('Homer');
+		expect(names.length).toBe(5);
+	});
 });

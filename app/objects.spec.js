@@ -32,6 +32,24 @@ describe('object specs', () =>  {
         });
     });
 
+    describe('object assign II', () => {
+        it('shold combine objects', () => {
+
+            let person = {
+              name: 'Lumberg'
+            };
+            let employee = {
+              title: 'Manager'
+            };
+            let actions = {
+              speak: () => 'umm yeah'
+            }
+            Object.assign(person, employee, actions);
+            expect(person.title).toBe('Manager');
+            expect(person.speak()).toBe('umm yeah');
+        });
+    });
+
     describe('property initializers', () => {
         it('should allow shorthand initialization', () => {
             let city = 'Detroit';
